@@ -8,6 +8,7 @@ console.log(__dirname); // This is the path to the folder that your file lives i
 console.log(path.join(__dirname, '../public')); // This is the path that your file exactly
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Defined paths for Expess config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -116,6 +117,6 @@ app.get('*', (req, res) => {
 
 // THis is how you start the server
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000.');
+app.listen(port, () => {
+  console.log('Server is up on port ' + port);
 });
